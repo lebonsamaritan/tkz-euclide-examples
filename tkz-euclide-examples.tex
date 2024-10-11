@@ -1,0 +1,53 @@
+%%% TikZ Euclid Examples
+%%% Author: Ada Huang <ada.zan.huang@gmail.com>
+%%% License: MIT
+
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{tkzexample}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{ZBlue}             {RGB}{61,109,240}
+\usepackage[
+  breaklinks=true,
+  colorlinks,
+  citecolor=MarkLeachBlue,
+  filecolor=MarkLeachBlue,
+  linkcolor=ZBlue,
+  urlcolor=ZBlue,
+  bookmarksopen,
+  %pdfstartview=FitW
+]{hyperref}
+
+\usepackage{gensymb} % \degree
+
+%%% serif
+% \RequirePackage[T1]{fontenc}
+% \RequirePackage{newpxtext,eulerpx}
+%%% sans
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[OT1]{fontenc}
+\usepackage[default]{raleway}
+\usepackage{newtxsf}
+
+\tikzset{%
+  point style/.style = {%
+    shape = circle,
+    fill = black,
+    inner sep = 0pt,
+    outer sep = 0pt,
+    minimum size = 2pt,
+  }
+}
+\addtolength{\textwidth}{2cm}
+\addtolength{\hoffset}{-1cm}
+
+\begin{document}
+\begin{center}
+  \textcolor{MidnightBlue}{\Huge tkz-euclide examples}
+\end{center}
+\clearpage
+\include{point}
+\end{document}
