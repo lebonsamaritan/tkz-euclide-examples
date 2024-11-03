@@ -1,0 +1,63 @@
+\section{Triangles}
+
+\subsection{\texttt{\textbackslash tkzDefTriangle}}
+
+\begin{tkzexample}[latex=4cm,small]
+  \begin{tikzpicture}[scale=.8]
+    \tkzDefPoint(0,0){A}
+    \tkzDefPoint(4,0){B}
+    \tkzDefTriangle[equilateral](A,B)
+    \tkzGetPoint{C}
+    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPoints[size=1.5pt, fill=black](A,B,C)
+    \tkzLabelPoints[below](A,B) \tkzLabelPoints[above](C)
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
+
+\begin{tkzexample}[latex=4cm,small]
+  \begin{tikzpicture}[scale=.8]
+    \tkzInit[xmax=5,ymax=3]
+    \tkzDefPoints{0/0/A,4/0/B}
+    \tkzDefTriangle[pythagore](A,B) \tkzGetPoint{C}
+    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPoints[size=1.5pt](A,B,C)
+    \tkzLabelPoints[above](A,B) \tkzLabelPoints[below](C)
+    \tkzLabelSegment[right](B,C){$3$}
+    \tkzLabelSegment[above](A,B){$4$}
+    \tkzLabelSegment[below left](A,C){$5$}
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
+
+\begin{tkzexample}[latex=4cm,small]
+  \begin{tikzpicture}[scale=.8]
+    \tkzInit[xmax=5,ymax=3]
+    \tkzDefPoints{0/0/A,4/0/B}
+    \tkzDefTriangle[school](A,B) \tkzGetPoint{C}
+    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPoints[size=1.5pt](A,B,C)
+    \tkzLabelPoints[below](A,B) \tkzLabelPoints[above](C)
+    \tkzMarkRightAngle[size=.2](C,B,A)
+    \tkzMarkAngles[mark=none, size=0.4cm](B,A,C)
+    \tkzLabelAngles[pos=1.2](B,A,C){$30\degree$}
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
+
+\begin{tkzexample}[latex=4cm,small]
+  \begin{tikzpicture}[scale=.8]
+    \tkzInit[xmax=5,ymax=3]
+    \tkzDefPoints{0/0/A,3/0/B}
+    \tkzDefTriangle[golden](A,B) \tkzGetPoint{C}
+    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPoints[size=1.5pt](A,B,C)
+    \tkzLabelPoints[below](A,B) \tkzLabelPoints[above](C)
+    \tkzMarkSegments[mark=||](C,A C,B)
+    \tkzMarkAngles[mark=none, size=0.4cm](B,A,C)
+    \tkzLabelAngles[pos=.8](B,A,C){$72\degree$}
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
+
+\subsection{\texttt{\textbackslash tkzDefDefSpcTriangle}}
