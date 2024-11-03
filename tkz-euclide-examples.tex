@@ -32,6 +32,11 @@
 \usepackage[default]{raleway}
 \usepackage{newtxsf}
 
+\usepackage{epigraph}
+\setlength\epigraphrule{0pt}
+\setlength\epigraphwidth{.67\textwidth}
+\renewcommand{\textflush}{flushright}
+
 \tikzset{%
   point style/.style = {%
     shape = circle,
@@ -45,10 +50,24 @@
 \addtolength{\hoffset}{-1cm}
 
 \begin{document}
+
 \begin{center}
   \textcolor{MidnightBlue}{\Huge tkz-euclide examples}
 \end{center}
+
+\vspace{.5in}
+
+\epigraph{
+  \textcolor{MidnightBlue}{This lowly sand that your trample underfoot,\\
+  if you throw it in a furnace and let it melt and seethe,\\
+  will become a sparkling crystal;\\
+  and thanks to such as this\\
+  a Galileo or Newton will discover the stars.}
+}{\vspace{1ex}\textit{\textcolor{MidnightBlue}{Victor Hugo, Les Mis\'erables}}}
+
 \clearpage
 \include{points}
 \include{lines}
+\include{triangles}
+\include{misc}
 \end{document}

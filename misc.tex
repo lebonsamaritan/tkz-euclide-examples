@@ -1,0 +1,48 @@
+\section{Miscellaneous}
+
+\emph{\textbf{2022 AMC12B P24}}
+
+\begin{tkzexample}[latex=5cm,small]
+  \begin{tikzpicture}
+    \tkzDefPoints{-1/0/P_1,1/0/P_2}
+    \tkzDefRegPolygon[side, sides=7, name=P_](P_1,P_2)
+    \foreach \i [evaluate=\i as \next using \i + 1]
+                in {1,...,6} {
+      \foreach \j in {\next,...,7} {
+        \tkzDrawSegment[red](P_\i, P_\j)
+      }
+    }
+    \tkzDefCircle[circum](P_1,P_2,P_3) \tkzGetPoint{O}
+    \tkzDrawCircle[blue](O,P_1)
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
+
+\noindent\emph{\textbf{2022 AMC12B P25}}
+
+\begin{tkzexample}[latex=5cm,small]
+  \begin{tikzpicture}
+    \tkzDefPoints{-1/-1/P_1,1/-1/P_2,0/0/O}
+    \tkzDefRegPolygon[side, sides=4, name=P_](P_1,P_2)
+    \tkzDrawPolygon(P_1,P_...,P_4)
+    \foreach \i [evaluate=\i as \j using { int(mod(\i,4) + 1) }]
+                in {1,...,4} {
+      \tkzDefRegPolygon[side, sides=6, name=Q_\i_](P_\i,P_\j)
+      \tkzDrawPolygon[blue](Q_\i_1,Q_\i_...,Q_\i_6)
+    }
+    \begin{pgfinterruptboundingbox}
+    \tkzDefPoint(5 - 2*sqrt(3), 2.1){A}
+    \tkzDefPoint(4.5, -2.1){C}
+    \tkzDefRectangle(A,C) \tkzGetPoints{B}{D}
+    \foreach \i in {1,...,4} {
+      \begin{scope}
+        \tkzDefPointsBy[rotation=center O angle 90](A,B,C,D)
+                       {A,B,C,D}
+        \tkzClipPolygon(A,B,C,D)
+        \tkzDrawPolygon[ultra thick, red](Q_\i_1,Q_\i_...,Q_\i_6)
+      \end{scope}
+    }
+    \end{pgfinterruptboundingbox}
+  \end{tikzpicture}
+\end{tkzexample}
+\vspace{\stretch{1}}
