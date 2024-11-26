@@ -1,0 +1,73 @@
+\section{Intersections}
+
+\subsection{\texttt{\textbackslash tkzInterLL}}
+
+\begin{tkzexample}[latex=6cm,small]
+  \begin{tikzpicture}[rotate=-45,scale=.75]
+    \tkzDefPoint(2,1){A}
+    \tkzDefPoint(6,5){B}
+    \tkzDefPoint(3,6){C}
+    \tkzDefPoint(5,2){D}
+    \tkzDrawLines(A,B C,D)
+    \tkzInterLL(A,B)(C,D)
+    \tkzGetPoint{I}
+    \tkzDrawPoints[size=1.5pt,color=blue](A,B,C,D)
+    \tkzDrawPoint[color=red](I)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsection{\texttt{\textbackslash tkzInterLC}}
+
+\begin{tkzexample}[latex=5cm,small]
+  \begin{tikzpicture}[scale=.6]
+    \tkzInit[xmax=5,ymax=4]
+    \tkzDefPoints{1/1/O,0/4/A,5/0/B,3/3/C}
+    \tkzInterLC(A,B)(O,C)
+    \tkzGetPoints{D}{E}
+    \tkzDrawCircle(O,C)
+    \tkzDrawPoints[size=1.5pt,color=blue](O,A,B,C)
+    \tkzDrawPoints[color=red](D,E)
+    \tkzDrawLine(A,B) \tkzLabelPoints[above](A)
+    \tkzLabelPoints[above right](O,B,C,D)
+    \tkzLabelPoints[below](E)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsection{\texttt{\textbackslash tkzInterCC}}
+
+\begin{tkzexample}[latex=4.8cm,small]
+  \begin{tikzpicture}[trim left=-1cm,
+                      scale=.4, xshift=.5cm]
+    \tkzDefPoint(1,1){A}
+    \tkzDefPoint(5,1){B}
+    \tkzInterCC(A,B)(B,A)\tkzGetPoints{C}{D}
+    \tkzDrawPoints[color=red](C,D)
+    \tkzDrawCircle[dashed](A,B)
+    \tkzDrawCircle[dashed](B,A)
+    \tkzDrawPolygon(A,B,C)
+    \tkzMarkSegments[mark=s||](C,A C,B B,A)
+    \tkzLabelPoints[below left](A)
+    \tkzLabelPoints[below right](B)
+    \tkzLabelPoint[above](C){$C$}
+    \tkzLabelPoint[below](D){$D$}
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\texttt{\textbackslash tkzGetFirstPoint} and \texttt{\textbackslash tkzGetSecondPoint}}
+
+\begin{tkzexample}[latex=4.8cm, small]
+  \begin{tikzpicture}[trim left=-1cm,
+                      scale=.4, xshift=.5cm]
+    \tkzDefPoints{0/0/A, 4/0/B, 3/0/C, 1.5/0/D}
+    \tkzDrawCircles[red!60](A,C B,D)
+    \tkzInterCC(A,C)(B,D)
+    \tkzGetFirstPoint{X} \tkzGetSecondPoint{Y}
+    \tkzLabelPoints[below](A,B,Y)
+    \tkzLabelPoints[above](X)
+    \tkzDrawPoints[color=blue](A,B,X,Y)
+    \begin{scope}
+      \tkzClipCircle(A,C)
+      \tkzFillCircle[fill=blue,opacity=0.3](B,D)
+    \end{scope}
+  \end{tikzpicture}
+\end{tkzexample}

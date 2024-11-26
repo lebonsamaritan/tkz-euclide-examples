@@ -79,10 +79,11 @@
     \tkzDefPoint(0,0){A}
     \tkzDefPoint(4,0){B}
     \tkzDefPoint(1,3){C}
-    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPolygon[densely dashed](A,B,C)
     \tkzSetUpLine[color=blue]
     \tkzDefSpcTriangle[medial,name=M](A,B,C){_A,_B,_C}
     \tkzDrawSegments(A,M_A B,M_B C,M_C)
+    \tkzDrawPolygon(M_A, M_B, M_C)
   \end{tikzpicture}
 \end{tkzexample}
 
@@ -91,10 +92,11 @@
     \tkzDefPoint(0,0){A}
     \tkzDefPoint(4,0){B}
     \tkzDefPoint(1,3){C}
-    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPolygon[densely dashed](A,B,C)
     \tkzSetUpLine[color=magenta]
     \tkzDefSpcTriangle[orthic,name=H](A,B,C){_A,_B,_C}
     \tkzDrawSegments(A,H_A B,H_B C,H_C)
+    \tkzDrawPolygon(H_A, H_B, H_C)
   \end{tikzpicture}
 \end{tkzexample}
 
@@ -103,10 +105,11 @@
     \tkzDefPoint(0,0){A}
     \tkzDefPoint(4,0){B}
     \tkzDefPoint(1,3){C}
-    \tkzDrawPolygon(A,B,C)
+    \tkzDrawPolygon[densely dashed](A,B,C)
     \tkzSetUpLine[color=orange]
     \tkzDefSpcTriangle[in,name=I](A,B,C){_A,_B,_C}
     \tkzDrawSegments(A,I_A B,I_B C,I_C)
+    \tkzDrawPolygon(I_A, I_B, I_C)
   \end{tikzpicture}
 \end{tkzexample}
 
