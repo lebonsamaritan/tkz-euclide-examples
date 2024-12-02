@@ -46,3 +46,60 @@
   \end{tikzpicture}
 \end{tkzexample}
 \vspace{\stretch{1}}
+\newpage
+\noindent\emph{\textbf{1991 AIME P14}}
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+    \tkzSetUpPoint[size=1.5pt] \tkzDefPoint(0,0){O}
+    \tkzDefPoint({-90 - 180/pi * acos(475/486)}:4){A}
+    \tkzDefPoint({-90 + 180/pi * acos(475/486)}:4){B}
+    \tkzDefPoint({-90 + 180/pi * acos(475/486) + 180/pi * acos(7/18)}:4){C}
+    \tkzDefPoint({-90 + 180/pi * acos(475/486) + 2 * 180/pi * acos(7/18)}:4){D}
+    \tkzDefPoint({-90 + 180/pi * acos(475/486) + 3 * 180/pi * acos(7/18)}:4){E}
+    \tkzDefPoint({-90 - 180/pi * acos(475/486) - 180/pi * acos(7/18)}:4){F}
+    \tkzDrawPoints(A,B,C,D,E,F) \tkzDrawPolygon[thin](A,B,C,D,E,F)
+    \tkzDrawSegments[thin](A,E A,D A,C) \tkzDrawCircle[thin](O,A)
+    \tkzLabelPoints[below left](A) \tkzLabelPoints[below right](B)
+    \tkzLabelPoints[right](C) \tkzLabelPoints[above right](D)
+    \tkzLabelPoints[above left](E) \tkzLabelPoints[left](F)
+    \tkzLabelSegment[font=\large, below, yshift=-0.1cm](A,B){$31$}
+    \tkzLabelSegment[font=\large, right, yshift=-0.1cm](B,C){$81$}
+    \tkzLabelSegment[font=\large, left](C,D){$81$}
+    \tkzLabelSegment[font=\large, right](E,F){$81$}
+    \tkzLabelSegment[font=\large, right, xshift=0.1cm](F,A){$81$}
+    \tkzLabelSegment[font=\large, below](E,D){$81$}
+    \tkzLabelSegment[font=\large, above](A,C){$x$}
+    \tkzLabelSegment[font=\large, left](A,D){$y$}
+    \tkzLabelSegment[font=\large, left](A,E){$z$}
+  \end{tikzpicture}
+\end{tkzexample}
+\newpage
+\begin{tkzexample}[latex=5cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B}
+  \tkzDefTriangle[equilateral](A,B)
+  \tkzGetPoint{C}
+  \tkzLabelPoints[below left](A)
+  \tkzLabelPoints[below right](B)
+  \tkzLabelPoints[above](C)
+  \tkzDrawPolygon[fill=red!20](A,B,C)
+  \tkzDrawSector[R,fill=white](A,2)(0,60)
+  \tkzDrawSector[R,fill=white](B,2)(120,180)
+  \tkzDrawSector[R,fill=white](C,2)(240,300)
+\end{tikzpicture}
+\end{tkzexample}
+
+\begin{tkzexample}[latex=5cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B,0/4/C,2/0/D,0/2/E}
+  \tkzDrawSector(A,B)(C)
+  \tkzDrawSector(D,B)(A)
+  \tkzDrawSector(E,A)(C)
+  \tkzInterCC(D,B)(E,C)
+  \tkzGetPoints{Y}{Z}
+  \filldraw[fill=red!20] (Y) arc(180:90:2cm) --
+      (Z) arc(0:-90:2cm) -- cycle;
+  \filldraw[fill=red!20] (Z) arc(90:0:2cm) --
+      (B) arc(0:90:4cm) -- (C) arc(90:0:2cm) -- cycle;
+\end{tikzpicture}
+\end{tkzexample}
